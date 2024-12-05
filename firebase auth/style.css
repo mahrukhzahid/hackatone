@@ -1,0 +1,168 @@
+
+:root {
+    --primary-color: #4caf50; /* Green */
+    --secondary-color: #ffffff; /* White */
+    --accent-color: #0000ff; /* Orange */
+    --text-color: #333333; /* Dark Gray */
+    --background-color: #f5f5f5; /* Light Gray */
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica", sans-serif; /* Assuming you are using Helvetica */
+  }
+  
+  body {
+    background-color: var(
+      --background-color
+    ); /* Light Gray background for the page */
+    color: var(--text-color); /* Dark text color */
+  }
+  
+  main {
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 40px;
+    margin: auto;
+    background-color: var(--secondary-color); /* White background for the form */
+  }
+  
+  h1 {
+    color: var(--primary-color); /* Green color for header */
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .form-floating .form-control {
+    color: var(--text-color); /* Dark text color for input */
+    border: 1px solid var(--primary-color); /* Green border */
+    border-radius: 5px;
+    box-shadow: none;
+    transition: border-color 0.3s;
+  }
+  
+  .form-floating .form-control:focus {
+    border-color: var(--accent-color); /* Orange border when focused */
+    box-shadow: 0 0 0 0.2rem rgba(255, 152, 0, 0.25); /* Orange glow on focus */
+  }
+  
+  label {
+    color: var(--text-color); /* Dark gray for labels */
+    font-weight: bold;
+  }
+  
+  .checkbox label {
+    color: var(--text-color);
+  }
+  
+  button {
+    background-color: var(--accent-color); /* Orange button color */
+    color: var(--secondary-color); /* White button text */
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #fb8c00; /* Darker orange on hover */
+  }
+  .btn-custom-2{
+    background-color: #fb8c00; /* Darker orange  */
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .btn-custom-2:hover{
+    background-color: var(--accent-color); /* Orange button color */
+  }
+  .checkbox input {
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 480px) {
+    main {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Custom styling for round button */
+  .round-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .round-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  /* ------------------blog appp */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+
+  

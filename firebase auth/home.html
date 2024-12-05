@@ -1,0 +1,227 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoughts, Ideas, and Stories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-blue-600">Coranu</div>
+            <div class="flex items-center space-x-4">
+                <input type="text" placeholder="Search..." class="border rounded-full px-4 py-2 text-sm">
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-full">LOGIN/REGISTER</button>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-2">Thoughts, Ideas, and Stories</h1>
+        <p class="text-gray-600 mb-8">A space where creativity flows, ideas take shape, and stories come to life. Dive in, explore, and connect with insights that inspire and resonate.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <aside class="md:col-span-1">
+                <div class="mb-8">
+                    <h2 class="text-lg font-semibold text-blue-600 mb-4">Blog Topics</h2>
+                    <ul class="space-y-2">
+                        <li>Company</li>
+                        <li>Design</li>
+                        <li>Technology</li>
+                        <li>Crypto</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Work</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-lg font-semibold text-blue-600 mb-4">Guide and Tools</h2>
+                    <ul class="space-y-2">
+                        <li>Guidelines</li>
+                        <li>Mentorship</li>
+                        <li>Tutorial</li>
+                        <li>Training</li>
+                        <li>Career</li>
+                        <li>Self Care</li>
+                    </ul>
+                </div>
+            </aside>
+            <section class="md:col-span-2">
+                <div class="mb-8">
+                    <h2 class="text-lg font-semibold text-gray-800 mb-4">Trending Topics</h2>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm">Design Thinking</span>
+                        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm">Technology</span>
+                        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm">Web3</span>
+                        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm">Programming</span>
+                        <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm">AI</span>
+                    </div>
+                    <article class="mb-8" id="article1">
+                        <p class="text-sm text-gray-500 mb-1">Mar 1</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Powerful Trading Tools and Features for Experienced Investors</h3>
+                        <p class="text-gray-600 mb-2">I'm always trying to think of new and interesting business ideas. I generally try to come up with ideas by thinking of what I would want to use or see in the world. Then, I try to find reasons why it wouldn't work</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span class="mr-2">Tools</span>
+                            <span class="mr-2">by Mark Tuchel</span>
+                            <span>7 min read</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button onclick="editArticle('article1')" class="text-blue-600">Edit</button>
+                            <button onclick="deleteArticle('article1')" class="text-red-600">Delete</button>
+                        </div>
+                    </article>
+                    <article id="article2">
+                        <p class="text-sm text-gray-500 mb-1">Jan 2</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Master JavaScript: 10 Essential Tips Every Developer Must Know</h3>
+                        <p class="text-gray-600 mb-2">I'm always trying to think of new and interesting business ideas. I generally try to come up with ideas by thinking of what I would want to use or see in the world. Then, I try to find reasons why it wouldn't work</p>
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span class="mr-2">AI</span>
+                            <span class="mr-2">by Henry Clark</span>
+                            <span>4 min read</span>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button onclick="editArticle('article2')" class="text-blue-600">Edit</button>
+                            <button onclick="deleteArticle('article2')" class="text-red-600">Delete</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script>
+        function editArticle(articleId) {
+            const article = document.getElementById(articleId);
+            const title = article.querySelector('h3').innerText;
+            const content = article.querySelector('p').innerText;
+
+            const newTitle = prompt('Edit Title:', title);
+            const newContent = prompt('Edit Content:', content);
+
+            if (newTitle !== null) {
+                article.querySelector('h3').innerText = newTitle;
+            }
+            if (newContent !== null) {
+                article.querySelector('p').innerText = newContent;
+            }
+        }
+
+        function deleteArticle(articleId) {
+            const article = document.getElementById(articleId);
+            article.remove();
+        }
+        
+        function editArticle(button) {
+            const article = button.parentElement;
+            const title = prompt("Edit the title:", article.querySelector('h1').innerText);
+            const subtitle = prompt("Edit the subtitle:", article.querySelector('p.text-blue-600').innerText);
+            const content = prompt("Edit the content:", article.querySelector('p.text-gray-700').innerText);
+            const author = prompt("Edit the author:", article.querySelector('div span:first-child').innerText);
+            const readTime = prompt("Edit the read time:", article.querySelector('div span:nth-child(3)').innerText);
+            const date = prompt("Edit the date:", article.querySelector('div span:nth-child(5)').innerText);
+
+            if (title) article.querySelector('h1').innerText = title;
+            if (subtitle) article.querySelector('p.text-blue-600').innerText = subtitle;
+            if (content) article.querySelector('p.text-gray-700').innerText = content;
+            if (author) article.querySelector('div span:first-child').innerText = author;
+            if (readTime) article.querySelector('div span:nth-child(3)').innerText = readTime;
+            if (date) article.querySelector('div span:nth-child(5)').innerText = date;
+        }
+    </script>
+</body>
+</html>
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Coranu Article</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="bg-white w-full max-w-4xl p-8 shadow-lg">
+        <header class="flex justify-between items-center mb-8">
+            <div class="flex items-center">
+                <img alt="Coranu logo" class="mr-2" height="40" src="https://storage.googleapis.com/a1aa/image/TPrJK5tzMX6yDNqUwlEQrlklUZ2xq0DCsDAHJJNHPgdoe67JA.jpg" width="40"/>
+                <span class="text-xl font-semibold">Coranu</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <input class="border rounded-full px-4 py-2" placeholder="Search..." type="text"/>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-full">LOGIN/REGISTER</button>
+            </div>
+        </header>
+        <div id="articles">
+            <article class="mb-8">
+                <h1 class="text-3xl font-bold mb-2">Master JavaScript: 10 Essential Tips Every Developer Must Know</h1>
+                <p class="text-blue-600 mb-4">Powerful Trading Tools and Features for Experienced Investors</p>
+                <p class="text-gray-700 mb-4">
+                    JavaScript remains one of the most popular programming languages for building dynamic and interactive web applications. But even experienced developers can find themselves stuck in a rut, writing the same patterns of code without exploring better solutions. In this blog, we’ll uncover 10 essential JavaScript tips and tricks that can help you write cleaner, more efficient, and modern code. From understanding closures and promises to mastering ES6+ features like destructuring and spread operators, these insights will elevate your development skills and save you time on your next project. Whether you’re a beginner or a seasoned coder, these tips are designed to boost your productivity and coding confidence.
+                </p>
+                <div class="flex items-center text-gray-500">
+                    <span>by Harry Gland</span>
+                    <span class="mx-2">|</span>
+                    <span>4 min read</span>
+                    <span class="mx-2">|</span>
+                    <span>Jan 2</span>
+                </div>
+                <button class="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-full" onclick="editArticle(this)">Edit</button>
+                <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded-full" onclick="deleteArticle(this)">Delete</button>
+            </article>
+        </div>
+        <button class="bg-green-500 text-white px-4 py-2 rounded-full" onclick="addArticle()">Add Article</button>
+    </div>
+
+    <script>
+        function addArticle() {
+            const articlesDiv = document.getElementById('articles');
+            const newArticle = document.createElement('article');
+            newArticle.classList.add('mb-8');
+            newArticle.innerHTML = `
+                <h1 class="text-3xl font-bold mb-2">New Article Title</h1>
+                <p class="text-blue-600 mb-4">New Article Subtitle</p>
+                <p class="text-gray-700 mb-4">
+                    This is a new article. You can add your content here. This is just a placeholder text for the new article.
+                </p>
+                <div class="flex items-center text-gray-500">
+                    <span>by New Author</span>
+                    <span class="mx-2">|</span>
+                    <span>5 min read</span>
+                    <span class="mx-2">|</span>
+                    <span>Jan 3</span>
+                </div>
+                <button class="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-full" onclick="editArticle(this)">Edit</button>
+                <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded-full" onclick="deleteArticle(this)">Delete</button>
+            `;
+            articlesDiv.appendChild(newArticle);
+        }
+
+        function deleteArticle(button) {
+            const article = button.parentElement;
+            article.remove();
+        }
+
+        function editArticle(button) {
+            const article = button.parentElement;
+            const title = prompt("Edit the title:", article.querySelector('h1').innerText);
+            const subtitle = prompt("Edit the subtitle:", article.querySelector('p.text-blue-600').innerText);
+            const content = prompt("Edit the content:", article.querySelector('p.text-gray-700').innerText);
+            const author = prompt("Edit the author:", article.querySelector('div span:first-child').innerText);
+            const readTime = prompt("Edit the read time:", article.querySelector('div span:nth-child(3)').innerText);
+            const date = prompt("Edit the date:", article.querySelector('div span:nth-child(5)').innerText);
+
+            if (title) article.querySelector('h1').innerText = title;
+            if (subtitle) article.querySelector('p.text-blue-600').innerText = subtitle;
+            if (content) article.querySelector('p.text-gray-700').innerText = content;
+            if (author) article.querySelector('div span:first-child').innerText = author;
+            if (readTime) article.querySelector('div span:nth-child(3)').innerText = readTime;
+            if (date) article.querySelector('div span:nth-child(5)').innerText = date;
+        }
+    </script>
+
+</body>
+</html>
